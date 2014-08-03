@@ -57,6 +57,9 @@ GoAgentX 是一个在 Mac OS X 下使用代理服务的图形界面控制软件�
 
 关于 shadowsocks 请参见 <https://github.com/clowwindy/shadowsocks>。
 
+### Http 代理
+1. 进入服务配置标签页，并选择 HTTP，填入 HTTP 代理相关信息。
+1. 进入状态标签页，选择 HTTP，点击启动
 
 ## 程序截图
 
