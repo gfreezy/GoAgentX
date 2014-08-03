@@ -9,5 +9,6 @@
 	<string>GAStunnelService</string>
 	<string>GAShadowSocksService</string>
 	<string>GAGoAgentUpdateService</string>
+	<string>GAHTTPService</string>
 </array>
 </plist>

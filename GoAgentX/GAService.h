@@ -57,6 +57,8 @@ typedef void (^GAServiceStatusChangedHandler)(GAService *service);
 
 - (int)proxyPort;
 
+- (NSString *)proxyAddress;
+
 - (NSArray *)proxyTypes;
 
 - (void)notifyStatusChanged;

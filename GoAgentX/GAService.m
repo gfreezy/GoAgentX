@@ -139,6 +139,10 @@ static AuthorizationFlags authFlags;
     return 0;
 }
 
+- (NSString *)proxyAddress {
+    return @"127.0.0.1";
+}
+
 - (bool)listenOnRemote {
     return NO;
 }
@@ -363,17 +367,17 @@ static AuthorizationFlags authFlags;
         } else if ([proxyTypes indexOfObject:@"PROXY"] != NSNotFound) {
             // 使用 HTTP 代理
             [proxies setObject:[NSNumber numberWithInteger:proxyPort] forKey:(NSString *)kCFNetworkProxiesHTTPPort];
-            [proxies setObject:@"127.0.0.1" forKey:(NSString *)kCFNetworkProxiesHTTPProxy];
+            [proxies setObject:[self proxyAddress] forKey:(NSString *)kCFNetworkProxiesHTTPProxy];
             [proxies setObject:[NSNumber numberWithInt:1] forKey:(NSString *)kCFNetworkProxiesHTTPEnable];
             [proxies setObject:[NSNumber numberWithInteger:proxyPort] forKey:(NSString *)kCFNetworkProxiesHTTPSPort];
-            [proxies setObject:@"127.0.0.1" forKey:(NSString *)kCFNetworkProxiesHTTPSProxy];
+            [proxies setObject:[self proxyAddress] forKey:(NSString *)kCFNetworkProxiesHTTPSProxy];
             [proxies setObject:[NSNumber numberWithInt:1] forKey:(NSString *)kCFNetworkProxiesHTTPSEnable];
             
         } else if ([proxyTypes indexOfObject:@"SOCKS"] != NSNotFound ||
                    [proxyTypes indexOfObject:@"SOCKS5"] != NSNotFound) {
             // 使用 SOCKS 代理
             [proxies setObject:[NSNumber numberWithInteger:proxyPort] forKey:(NSString *)kCFNetworkProxiesSOCKSPort];
-            [proxies setObject:@"127.0.0.1" forKey:(NSString *)kCFNetworkProxiesSOCKSProxy];
+            [proxies setObject:[self proxyAddress] forKey:(NSString *)kCFNetworkProxiesSOCKSProxy];
             [proxies setObject:[NSNumber numberWithInt:1] forKey:(NSString *)kCFNetworkProxiesSOCKSEnable];
         }
     }

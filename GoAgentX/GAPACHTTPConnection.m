@@ -69,8 +69,12 @@
         GAAppDelegate* delegate = [NSApp delegate];
         NSArray *proxyTypes = [[delegate currentService] proxyTypes];
         int proxyPort = [[delegate currentService] proxyPort];
+        NSString *host = [[delegate currentService] proxyAddress];
         
-        NSString *host = [request headerField:@"Host"];
+        if ([host isEqualToString:@"127.0.01"]) {
+            host = [request headerField:@"Host"];
+        }
+        
         if ([host rangeOfString:@":"].location != NSNotFound) {
             host = [host substringToIndex:[host rangeOfString:@":"].location];
         }

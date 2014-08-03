@@ -92,5 +92,11 @@
 	<integer>60</integer>
 	<key>GoAgent:Local:EnableObfuscate</key>
 	<false/>
+	<key>HTTP:Port</key>
+	<integer>0</integer>
+	<key>HTTP:Address</key>
+	<string></string>
+	<key>HTTP:ProxyType</key>
+	<integer>0</integer>
 </dict>
 </plist>
