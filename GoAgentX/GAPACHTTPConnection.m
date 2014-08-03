@@ -71,7 +71,7 @@
         int proxyPort = [[delegate currentService] proxyPort];
         NSString *host = [[delegate currentService] proxyAddress];
         
-        if ([host isEqualToString:@"127.0.01"]) {
+        if ([host isEqualToString:@"127.0.0.1"]) {
             host = [request headerField:@"Host"];
         }
         

@@ -374,7 +374,7 @@
 }
 
 - (IBAction)AddNewCustomPACRule:(id)sender {
-    [[NSUserDefaults standardUserDefaults] stringForKey:@"GoAgentX:CustomPACDomainList"];
+    
 }
 
 - (void)importGoagentCA:(id)sender {
